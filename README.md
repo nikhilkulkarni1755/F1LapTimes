@@ -1,4 +1,12 @@
 # F1LapTimes
+
+Update Nov 6 2023
+*****
+Using FastF1 to find pit stop data and other stats, which can be used to create a Tensorflow prediction model for the Las Vegas GP
+
+![Alt text](assets/PitStopTimeCalculation.png?raw=true "Pit Stop Calculation for Max Verstappen in Austin Race Session")
+*****
+
 Created with Sameer Kulkarni and Shrikrishna Kulkarni
 
 Testing out the hypothesis: Does lap time decrease as time goes on? (AKA compare lap times as laps go on). We expect it to decrease, given fuel load decreases. 
