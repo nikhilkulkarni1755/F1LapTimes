@@ -1,5 +1,6 @@
 #Authors: Sameer Kulkarni, Shrikrishna Kulkarni and Nikhil Kulkarni
 
+import tensorflow as tf
 import pandas as pd
 import matplotlib.pyplot as plt
 import requests
@@ -38,30 +39,21 @@ for url in urls:
     response = requests.get(url).text
     soup = BeautifulSoup(response, 'xml')
     times = soup.find_all('Timing')
+    counter = 0
     for data in times:
         #print(data)
         #print(data['driverId'])
         lap = data['lap']
         #print(data['time'])
-        f = open("data/" + str(lap) + "race" + str(race) + ".txt", "a")
-        print(data['time'])
+        filename = "race1data/" + str(lap) + "race" + str(race) + ".txt" 
+        f = open(filename, "w")
+        #print(data['time'])
         f.write(data['time'])
         f.close()
         #print(data['position'])
         #print(data['lap'])
         #print(data['lap'])
 
-#print(len(times))
+#open all the files and read the individual times. 
 
-#for url in urls:
-
-#for data in times:
-    #print(data)
-    #print(data['driverId'])
-#    print(data['time'])
-    #print(data['position'])
-    #print(data['lap'])
-    #print(data['lap'])
-
-#df_laptimes = pd.DataFrame.from_dict(dic_entries)
-#df_laptimes
+times = []
