@@ -4,7 +4,7 @@ Update Nov 6 2023
 *****
 Using FastF1 to find pit stop data and other stats, which can be used to create a Tensorflow prediction model for the Las Vegas GP
 
-![Alt text](assets/PitStopTimeCalculation.png?raw=true "Pit Stop Calculation for Max Verstappen in Austin Race Session")
+![Alt text](assets/AvgPitStopTimes.png?raw=true "Average Pit Stop Times for Austin GP")
 *****
 
 Created with Sameer Kulkarni and Shrikrishna Kulkarni
