@@ -9,6 +9,7 @@ import pandas as pd
 
 
 all_drivers_pits = {}
+all_drivers_fastest_laps = {}
 session = fastf1.get_session(2023, 'Austin', 'R')
 # print(session)
 # session.load()
@@ -26,7 +27,9 @@ for d in drivers:
 
     outTime = session.laps.pick_driver(d).PitOutTime
     inTime = session.laps.pick_driver(d).PitInTime
+    bestLap = session.laps.pick_driver(d).pick_fastest()['LapTime']
 
+    # not all laps have in time or out time, we going thru all the laps to check
     outTimes = []
     for i in outTime:
         if i is not pd.NaT:
@@ -58,6 +61,7 @@ for d in drivers:
     # print(total)
     
     all_drivers_pits[d] = total
+    all_drivers_fastest_laps[d] = bestLap
     counter+=1
     # print(all_drivers_pits)
 
@@ -74,6 +78,8 @@ for key, value in all_drivers_pits.items():
 for remove in removeNegativeAvgTimes:
     all_drivers_pits.pop(remove)
 print(all_drivers_pits) 
+print('Printing best laps for all')
+print(all_drivers_fastest_laps) 
 # for i in all_drivers_pits:
     
 
