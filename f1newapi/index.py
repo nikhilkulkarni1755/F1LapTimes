@@ -1,6 +1,9 @@
 import fastf1
 import pandas as pd
 
+# need to create venv for tensorflow, tf uses python3.10, not 12
+# import tensorflow as tf
+
 # session = fastf1.get_session(2023, 'Austin', 'Q')
 
 # Before we go into all the pit times, we need to go thru and find all the drivers
@@ -27,7 +30,7 @@ for d in drivers:
 
     outTime = session.laps.pick_driver(d).PitOutTime
     inTime = session.laps.pick_driver(d).PitInTime
-    bestLap = session.laps.pick_driver(d).pick_fastest()['LapTime']
+    bestLap = session.laps.pick_driver(d).pick_fastest()['LapTime'].total_seconds()
 
     # not all laps have in time or out time, we going thru all the laps to check
     outTimes = []
